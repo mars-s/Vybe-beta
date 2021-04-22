@@ -67,7 +67,7 @@ function App() {
         "welcome to the chat"
       ) :  (
         <Buttons onClick={signInWithGoogle}>Sign in with Google</Buttons>
-      })
+      )}
       <h1>hello</h1>
     </div>
   );
