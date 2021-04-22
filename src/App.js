@@ -1,5 +1,6 @@
 import './App.css';
 import Buttons from './components/Button.jsx'
+import react, { useState, useEffect } from 'react'
 
 import firebase from 'firebase/app';
 import 'firebase/firestore'
@@ -23,13 +24,33 @@ const auth = firebase.auth()
 const firestore = firebase.firestore()
 
 function App() {
+  const [user, setUser] = useState(() => auth.currentUser)
+  const [initializing, setInitializing] = useState(true)
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChange(user => {
+      if (user) {
+        setUser(user)
+      }
+      else {
+        setUser(null)
+      }
+      if (initializing) {
+        setInitializing(false)
+      }
+    })
+
+    //clean up subscription
+    return unsubscribe
+  }, [])
+
 
   const signInWithGoogle = async () => {
     //Retrieve Google provider object
     const provider = new firebase.auth.GoogleAuthProvider()
     // set the language to the default browser preference
     auth.useDeviceLanguage()
-
+    // start sign in process 
     try {
       await auth.signInWithPopup(provider)
     }
@@ -38,9 +59,15 @@ function App() {
     }
   }
 
+  if (initializing) return 'Loading...'
+
   return (
     <div>
-      <Buttons onClick={signInWithGoogle}>Sign in with Google</Buttons>
+      {user ? (
+        "welcome to the chat"
+      ) :  (
+        <Buttons onClick={signInWithGoogle}>Sign in with Google</Buttons>
+      })
       <h1>hello</h1>
     </div>
   );
