@@ -1,5 +1,5 @@
 import './App.css';
-import Button from './components/Button.jsx'
+import Buttons from './components/Button.jsx'
 
 import firebase from 'firebase/app';
 import 'firebase/firestore'
@@ -40,7 +40,7 @@ function App() {
 
   return (
     <div>
-      <Button>Sign in with Google</Button>
+      <Buttons onClick={signInWithGoogle}>Sign in with Google</Buttons>
       <h1>hello</h1>
     </div>
   );
