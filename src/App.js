@@ -34,13 +34,14 @@ function App() {
       await auth.signInWithPopup(provider)
     }
     catch (error) {
-      console.log(error)
+      console.error(error)
     }
   }
 
   return (
     <div>
-      <Button onClick={signInWithGoogle}>Sign in with Google</Button>
+      <Button>Sign in with Google</Button>
+      <h1>hello</h1>
     </div>
   );
 }
