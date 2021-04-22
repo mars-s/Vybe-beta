@@ -1,5 +1,7 @@
-const Button = ({ onclick = null, children = null, }) => {
-  <Button onclick={onClick}>{children}</Button>
+const Button = ({ onClick = null, children = null, }) => {
+  return (
+    <Button onclick={onClick}>{children}</Button>
+  )
 }
 
 export default Button

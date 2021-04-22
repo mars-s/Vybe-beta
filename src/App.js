@@ -1,4 +1,5 @@
 import './App.css';
+import Button from './components/Button.jsx'
 
 import firebase from 'firebase/app';
 import 'firebase/firestore'
@@ -22,9 +23,24 @@ const auth = firebase.auth()
 const firestore = firebase.firestore()
 
 function App() {
+
+  const signInWithGoogle = async () => {
+    //Retrieve Google provider object
+    const provider = new firebase.auth.GoogleAuthProvider()
+    // set the language to the default browser preference
+    auth.useDeviceLanguage()
+
+    try {
+      await auth.signInWithPopup(provider)
+    }
+    catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <div>
-
+      <Button onClick={signInWithGoogle}>Sign in with Google</Button>
     </div>
   );
 }
