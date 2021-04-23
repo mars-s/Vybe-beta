@@ -1,6 +1,7 @@
 import './App.css';
 import Buttons from './components/Button.jsx'
 import react, { useState, useEffect } from 'react'
+import Channel from './components/Channel'
 
 import firebase from 'firebase/app';
 import 'firebase/firestore'
@@ -22,6 +23,7 @@ firebase.initializeApp({
 
 const auth = firebase.auth()
 const firestore = firebase.firestore()
+const db = firebase.firestore()
 
 function App() {
   const [user, setUser] = useState(() => auth.currentUser)
@@ -59,12 +61,24 @@ function App() {
     }
   }
 
+  const signOut = async () => {
+    try {
+      await firebase.auth().signOut()
+    }
+    catch (error) {
+      console.log(error.message)
+    }
+  }
+
   if (initializing) return 'Loading...'
 
   return (
     <div>
       {user ? (
-        "welcome to the chat"
+        <>
+          <Buttons onClick={signOut}>Sign out</Buttons>
+          <Channel user={user} db={db} />
+        </>
       ) :  (
         <Buttons onClick={signInWithGoogle}>Sign in with Google</Buttons>
       )}
