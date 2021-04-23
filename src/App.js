@@ -82,7 +82,6 @@ function App() {
       ) :  (
         <Buttons onClick={signInWithGoogle}>Sign in with Google</Buttons>
       )}
-      <h1>hello</h1>
     </div>
   );
 }
