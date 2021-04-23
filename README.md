@@ -1,6 +1,6 @@
 # We are making a chat app. 😂
 
-## Please look at CONTRIBUTING.md for insturctions on contributing 💙
+### Please look at CONTRIBUTING.md for insturctions on contributing 💙
 
 ### This is the link to the tutorial we are following:
 [https://www.youtube.com/watch?v=2-LISBTczQE](https://www.youtube.com/watch?v=2-LISBTczQE)
