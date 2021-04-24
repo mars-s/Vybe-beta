@@ -50,9 +50,9 @@ const Channel = ({ user = null, db = null }) => {
   return (
     <>
       <ul>
-        {messages.map(message => {
-          <li key={message.id}>{message.text}</li>
-        })} 
+      {messages.map(message => (
+        <li key={message.id}>{message.text}</li>
+      ))}
       </ul>
       <form onSubmit={handleOnSubmit}>
         <input 
