@@ -16,6 +16,7 @@ const Message = ({
       {createdAt?.seconds ? (
         <span>{formatRelative(new Date(createdAt.seconds * 1000), new Date())}</span>
       ): null}
+      <p>{text}</p>
     </div>
   )
 }
