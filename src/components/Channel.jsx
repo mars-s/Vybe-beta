@@ -55,8 +55,13 @@ const Channel = ({ user = null, db = null }) => {
         })} 
       </ul>
       <form onSubmit={handleOnSubmit}>
-        <input type="text" value={newMessage} onChange={handleOnChange} placeholder="Type Your message here..." />
-        <button type="submit" disabled={ !newMessage}>
+        <input 
+          type="text" 
+          value={newMessage} 
+          onChange={handleOnChange} 
+          placeholder="Type Your message here..." 
+         />
+        <button type="submit" disabled={!newMessage}>
           Send
         </button>
       </form>
