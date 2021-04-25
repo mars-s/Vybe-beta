@@ -101,7 +101,7 @@ function App() {
             </div>
 
             <div className={'container mx-auto p-4'}>
-              <Card title={'What is Vybe?'} author={'Rain'} tag={'About us'} date={''} desc={'Vybe is a light weight chat room for students to be used at school'} URL={'https://i.pinimg.com/originals/e1/42/bf/e142bf69c8558bdc7b2a3d84bb114b9c.jpg'} />
+              <Card title={'What is Vybe?'} author={'Rain'} tag={'About us'} date={''} desc={'Vybe is a light weight chat room for students to be used at school.'} URL={'https://i.pinimg.com/originals/e1/42/bf/e142bf69c8558bdc7b2a3d84bb114b9c.jpg'} />
             </div>
 
           </div>
