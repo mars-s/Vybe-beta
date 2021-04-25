@@ -2,6 +2,8 @@ import './App.css';
 import Buttons from './components/Button.jsx'
 import react, { useState, useEffect } from 'react'
 import Channel from './components/Channel'
+import Card from './components/Cards'
+import Footer from './components/Footer'
 
 import firebase from 'firebase/app';
 import 'firebase/firestore'
@@ -88,15 +90,25 @@ function App() {
       ) :  (
         <div>
           <div className={'h-screen bg-gray-100'}>
+
             <div className={"text-5xl font-extrabold p-16 text-center"}>
               <p className={'filter drop-shadow-md'}>Welcome to <span className={'bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500'}>Vybe.</span></p>
             </div>
+
             <div className={'flex justify-center'}>
-              <Buttons styles={'text-lg drop-shadow-md bg-purple-400 rounded-full py-3 px-6 font-sans font-medium'} onClick={signInWithGoogle}>Sign in with Google</Buttons>
+              <Buttons styles={'text-lg mx-auto shadow-md bg-gradient-to-t from-blue-400 to-purple-500 rounded-full py-3 px-6 font-sans font-semibold text-white filter drop-shadow-xl'} onClick={signInWithGoogle}>Sign in with Google</Buttons>
               <FcGoogle className={'h-8 w-8 py-1 filter drop-shadow-md'} />
             </div>
+
+            <div className={'container mx-auto p-4'}>
+              <Card title={'What is Vybe?'} tag={'About us'} date={''} desc={'Vybe is a light weight chat room for students and to be used at school'} URL={'https://i.pinimg.com/originals/e1/42/bf/e142bf69c8558bdc7b2a3d84bb114b9c.jpg'} />
+            </div>
+
           </div>
             
+          <div>
+            <Footer />
+          </div>
         </div>
       )}
     </div>
