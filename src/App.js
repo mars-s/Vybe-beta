@@ -2,6 +2,7 @@ import './App.css';
 import Buttons from './components/Button.jsx'
 import react, { useState, useEffect } from 'react'
 import Channel from './components/Channel'
+import Footer from './components/Footer'
 
 import firebase from 'firebase/app';
 import 'firebase/firestore'
@@ -10,7 +11,7 @@ import 'firebase/auth'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 
-
+import { FcGoogle } from 'react-icons/fc'
 
 firebase.initializeApp({
   apiKey: "AIzaSyBb6ImeMH66Evn-E8HEY-UV6ngwZ3lYd0s",
@@ -84,13 +85,19 @@ function App() {
           </div>
         </>
       ) :  (
-        <div className={'bg-purple-100 h-screen'}>
-            
-            <div className={"text-5xl font-extrabold p-16 text-center "}>
-              <p>Welcome to <span className={'bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500'}>Vibe.</span></p>
+        <div>
+            <div className={'bg-gray-100 h-screen'}>
+              <div className={"text-5xl font-extrabold p-16 text-center "}>
+                <p className={'text-black filter drop-shadow-md'}>Welcome to <span className={'bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500'}>Vybe.</span></p>
+              </div>
+              <div className={'flex justify-center'}>
+                <form>
+                <Buttons styles={'text-lg mx-auto drop-shadow-md bg-gradient-to-t from-blue-400 to-purple-500 rounded-full py-3 px-6 font-sans font-semibold text-white filter drop-shadow-xl'} onClick={signInWithGoogle}>Sign in with Google</Buttons> <FcGoogle />
+                </form>
+              </div>
             </div>
-            <div className={'flex justify-center'}>
-              <Buttons onClick={signInWithGoogle}>Sign in with Google</Buttons>
+            <div>
+              <Footer />
             </div>
         </div>
       )}
