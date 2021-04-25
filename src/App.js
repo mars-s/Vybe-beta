@@ -7,6 +7,8 @@ import firebase from 'firebase/app';
 import 'firebase/firestore'
 import 'firebase/auth'
 
+import { FcGoogle } from 'react-icons/fc'
+
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 
@@ -84,14 +86,17 @@ function App() {
           </div>
         </>
       ) :  (
-        <div className={'bg-purple-100 h-screen'}>
-            
-            <div className={"text-5xl font-extrabold p-16 text-center "}>
-              <p>Welcome to <span className={'bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500'}>Vibe.</span></p>
+        <div>
+          <div className={'h-screen bg-gray-100'}>
+            <div className={"text-5xl font-extrabold p-16 text-center"}>
+              <p className={'filter drop-shadow-md'}>Welcome to <span className={'bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500'}>Vybe.</span></p>
             </div>
             <div className={'flex justify-center'}>
-              <Buttons onClick={signInWithGoogle}>Sign in with Google</Buttons>
+              <Buttons styles={'text-lg drop-shadow-md bg-purple-400 rounded-full py-3 px-6 font-sans font-medium'} onClick={signInWithGoogle}>Sign in with Google</Buttons>
+              <FcGoogle className={'h-8 w-8 py-1 filter drop-shadow-md'} />
             </div>
+          </div>
+            
         </div>
       )}
     </div>

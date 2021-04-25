@@ -1,7 +1,7 @@
-const Button = ({ onClick = null, children = null }) => {
+const Button = ({ onClick = null, children = null, styles }) => {
   return (
     <div>
-      <button onClick={onClick} className={'text-lg drop-shadow-md bg-purple-400 rounded-full py-3 px-6 font-sans font-medium text-lg'}>{children}</button>
+      <button onClick={onClick} className={styles}>{children}</button>
     </div>
   )
 }
