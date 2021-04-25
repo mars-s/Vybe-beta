@@ -79,10 +79,20 @@ function App() {
       {user ? (
         <>
           <Buttons onClick={signOut}>Sign out</Buttons>
-          <Channel user={user} db={db} />
+          <div className={'container mx-auto'}>
+            <Channel user={user} db={db} />
+          </div>
         </>
       ) :  (
-        <Buttons onClick={signInWithGoogle}>Sign in with Google</Buttons>
+        <div className={'bg-purple-100 h-screen'}>
+            
+            <div className={"text-5xl font-extrabold p-16 text-center "}>
+              <p>Welcome to <span className={'bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500'}>Vibe.</span></p>
+            </div>
+            <div className={'flex justify-center'}>
+              <Buttons onClick={signInWithGoogle}>Sign in with Google</Buttons>
+            </div>
+        </div>
       )}
     </div>
   );
