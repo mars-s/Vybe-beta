@@ -10,3 +10,6 @@
   2. Then `cd` into the folder by typing `cd React-chat-app` (in the terminal).
   3. Type `npm i` to install the node pakages/dependencies.
   4. Run the server by `npm start` this will start the app in your browser automatically, if it doesn't open up then, please type in `localhost:3000` in your browser.
+
+# Recent update on the webpage styles
+  ![image](https://user-images.githubusercontent.com/71009876/115983168-ec43f280-a5e2-11eb-8f57-9f7f844b8348.png)
