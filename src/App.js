@@ -88,7 +88,7 @@ function App() {
           </div>
         </>
       ) :  (
-        <div>
+        <div className={'relative'}>
           <div className={'h-screen bg-gray-100'}>
 
             <div className={"text-5xl font-extrabold p-16 text-center"}>
@@ -96,8 +96,10 @@ function App() {
             </div>
 
             <div className={'flex justify-center'}>
-              <Buttons styles={'text-lg mx-auto shadow-md bg-gradient-to-t from-blue-400 to-purple-500 rounded-full py-3 px-6 font-sans font-semibold text-white filter drop-shadow-xl'} onClick={signInWithGoogle}>Sign in with Google</Buttons>
-              <FcGoogle className={'h-8 w-8 py-1 filter drop-shadow-md'} />
+              <Buttons styles={'text-lg mx-auto shadow-md bg-gradient-to-t from-blue-400 to-purple-500 rounded-full py-3 px-6 font-sans font-semibold text-white filter drop-shadow-xl inline-flex'} onClick={signInWithGoogle}>
+                <span>Sign in with Google</span>
+                <FcGoogle className={'h-8 w-8 py-1 filter drop-shadow-md'} />
+              </Buttons>
             </div>
 
             <div className={'container mx-auto p-4'}>
@@ -106,7 +108,7 @@ function App() {
 
           </div>
             
-          <div>
+          <div className={'absolute inset-x-0 bottom-0'}>
             <Footer />
           </div>
         </div>
