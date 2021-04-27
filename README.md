@@ -2,8 +2,8 @@
 
 ### Please look at CONTRIBUTING.md for insturctions on contributing 💙
 
-### This is the link to the tutorial we are following:
-[https://www.youtube.com/watch?v=2-LISBTczQE](https://www.youtube.com/watch?v=2-LISBTczQE)
+# DISCLAIMER
+Be aware that this project was just a way for us to learn how to use Firebase etc. But we are planning to create a larger project near the end of this week which will be more capable and have better functionality such as Private DMs, as well as group messages, texting with pictures. Anyone is welcome to join in on that if you want to.   
 
 # Running the development server
   1. Clone this repo by doing `git clone [link to this repository]` in the terminal, or you could use Github Desktop.
