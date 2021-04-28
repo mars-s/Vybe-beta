@@ -81,12 +81,15 @@ function App() {
   return (
     <div>
       {user ? (
-        <>
-          <Buttons onClick={signOut}>Sign out</Buttons>
+        <div className={'bg-gray-900 flex flex-col h-screen'}>
+          <div className={'flex justify-between p-4'}>
+            <span className={'bg-clip-text text-transparent text-4xl font-extrabold text-center bg-gradient-to-r from-purple-400 to-blue-500'}>Vybe.</span>
+            <Buttons onClick={signOut} styles={'text-lg mx-auto sticky top-2 shadow-md bg-gradient-to-t from-blue-400 to-purple-500 rounded-full py-3 px-6 font-sans font-semibold text-white filter drop-shadow-xl inline-flex'}>Sign out</Buttons>
+          </div>
           <div className={'container mx-auto'}>
             <Channel user={user} db={db} />
           </div>
-        </>
+        </div>
       ) :  (
         <div className={'relative'}>
           <div className={'h-screen bg-gray-100'}>

@@ -49,26 +49,30 @@ const Channel = ({ user = null, db = null }) => {
   }
 
   return (
-    <>
-      <ul>
+    <div className={'flex-1 flex flex-col overflow-hidden mt-2'}>
+      <ul className={'container w-5xl md:max-w-8xl mx-auto h-screens overflow-y-scroll rounded-lg p-4 border border-gray-700'}>
       {messages.map(message => (
         <li key={message.id}>
           <Message {...message} />
         </li>
       ))}
       </ul>
-      <form onSubmit={handleOnSubmit}>
+      <form onSubmit={handleOnSubmit} className={'bottom-0 px-3'}>
         <input 
           type="text" 
           value={newMessage} 
           onChange={handleOnChange} 
+          className="lg:w-11/12 w-4/5 rounded-l-lg p-4 border-t mr-0 border-b border-l border-gray-700 bg-gray-800 text-gray-500"
           placeholder="Type Your message here..." 
          />
-        <button type="submit" disabled={!newMessage}>
+        <button 
+          type="submit"
+          className="lg:w-1/12 w-1/5 px-4 md:px-8 rounded-r-lg bg-gradient-to-t from-blue-400 to-purple-500 font-sans font-semibold text-white font-bold p-4 border-gray-700 uppercase border-t border-b border-r" 
+          disabled={!newMessage}>
           Send
         </button>
       </form>
-    </>
+    </div>
   )
 }
 
